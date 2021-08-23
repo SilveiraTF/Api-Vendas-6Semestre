@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import Product from '../entities/Products'
+import Product from '../entities/Product'
 export default class ProductRepositorie extends Repository<Product>{
 
     //exemplo de uma implementação particular, pois o resto já temos
