@@ -1,4 +1,4 @@
-import AppError from "shared/errors/AppError";
+import AppError from "../../../shared/errors/AppError";
 import { getCustomRepository } from "typeorm"
 import ProductRepository from "../typeorm/repositories/ProductRepository"
 import Product from "../typeorm/entities/Product"
@@ -20,7 +20,7 @@ class UpdateProductService{
         }
         //verifica se já tem produto com aquele nome
         let productExists = await productRepository.findByName(name)
-        if(!product){
+        if(productExists){
             throw new AppError('Já existe produto com esse nome')
         }
         //pode atualizar
